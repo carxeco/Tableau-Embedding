@@ -12,7 +12,7 @@ const options = {
 };
 
 // Create variable to store the URL
-const url = "https://public.tableau.com/views/BadOmensMusicSetlistDashboard/OverallView";
+const url = "https://public.tableau.com/views/BadOmensSetlist/OverallView";
 
 
 //Define Function to our Dashboard
