@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <li><a href=""> <i class="fas fa-musicc"></i> </a></li>
+    <li><a href=""> <i class="fas fa-musicc"></i> </a></li>
+    <label class="Menu">
+        <input type="checkbox">
+        <div class = "toggle">
+            <span class = "top_line common"></span>
+            <span class = "middle_line common"></span>
+            <span class = "bottom_line common"></span>
+        </div>
+        
+        <div class="slide">
+            <h1 class="Menu-Title">MENU</h1>
+            <ul>
+                <li><a href=""> <i class="fas fa-musicc"></i> </a></li>
+                <li><a href=""> <i class="fas fa-musicc"></i> </a></li>
+                <li><a href="Homepage.html"><i class="fas fa-home"></i> Homepage</a></li>
+                <li><a href=""> <i class="fas fa-musicc"></i> </a></li>
+                <li><a href="Setlist Dashboard.html"><i class="fas fa-music"></i> Setlist</a></li>
+                <li><a href=""> <i class="fas fa-musicc"></i> </a></li>
+                <li><a href="About.html"><i class="fas fa-info"></i> About</a></li>
+            </ul>
+        </div>
+    </label>
+
+
+
+    <h1 style="font-family: consolas;">
+        <font size="3">
+
+    <font color="white">
+    <center><font size="12">About this project</font></center>
+
+    <div class="Text">
+
+    <p> </p>
+
+    <p>ㅤ</p>
+
+    <p>The aim of this project was to create a place where fans, concertgoers, musicians and I could explore setlists from live performances for our favourite band, Bad Omens, through a Tableau dashboard.</p>
+
+    <p>This website provides a platform for fans to explore the artists touring history as well any songs played during concerts. Including details such as the order of the songs, the frequency in which they are performed, popular locations and other relevant information. The dashboard also offers statistics and insights about the most frequently played songs, tour dates, and overall setlist trends.</p> 
+    
+    <p>The dashboard also allows users the opportunity to explore the artists discography and discover new music in which they may have missed out on previously, as well as being able to listen to the song without leaving the dashboard via Spotify.</p>
+    
+    <p>This project was inspired by the setlist.fm website where users can search for their favourite Artists and see what shows they've performed and what songs have been played at these shows. It allows fans to see what their upcoming show may look like, if its part of the same tour. As well as see how the artist has progressed throughout their career and tour history.</p>
+    
+    <p> </p>
+
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <center><font size="6">Getting started: An Idea</font></center>
+
+    <p> Being a huge concert goer, I find myself spending a lot of my time on setlist.fm before a gig. Looking at what the setlist for the current tour looks like as well as seeing how they differed from the last few tours and what songs may have been added or removed. If its a new tour I may spend time looking at the last few tours and seeing what songs are a conssitent mainstay in the bands setlist and what songs are in rotation and trying to find out what the next tour may look like.</p>
+
+    <p>All this gave me the idea of building a dashboard where the artists data was easily accesible in a way which isn't available in setlist.fm. I found that whilst setlist fm is extremely detailed and accurate, it lacked an overview where fans could access an aggregated view but also a break that down into a more granualar view. Things such as: total shows, countries, cities, venues, most played songs, most played albums etc. These are available in setlist fm but they are hidden and not easy to view or drill into, taking you through multiple links and pages. </p>
+
+    <p>Whilst I know a single dashbaord cannot replace hundreds of links and pages which correspond to each artist in setlist fm. I wanted to at least be able to give a simple and easy option for viewing the artists most important data.</p>
+
+    <p>ㅤ</p>
+
+
+    <center><a href="https://gifyu.com/image/SWIuO"><img src="https://s11.gifyu.com/images/SWIuO.gif" alt="Setlist FM" border="0" /></a></center>
+   
+    <center><font size="1"><p>An example of how setlist fm can be used to see a bands setlist and some other data. Where the user searches name > selects show > views setlist.</p></font></center>
+
+    
+    <p>ㅤ</p>
+
+    
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <center><font size="6">API's: Connecting via Alteryx and a change in plans </font></center>
+
+    <p> The first step was to find a way to connect to a data source which would host this setlist data. Luckily setlist.fm has an API which has been designed to give easy access to their setlist data. Once I knew that an API conection was possible, I applied for an API key and was ready to start. Unfortunately this API connection wasn't as easy access as it seemed since documentation was so poor, consisting of two paragraphs, meaning I had to do a lot of guessing and trail an error when it came to setting some connection and request parameters</p>
+
+    <p>Once the API connection was set, this is where the first stumbling block occured, I initially had hope to create a dashbaord which could be used by many fans of different artists, however I quickly found out it would not be possible. For starters the API connection has a limit of 1,440 daily requests, with an upgrade to max 50,000 upon a second API application via setlistfm. This seemed low if i wanted to include as many artists as possible but perhaps a workaround could be found. That was until i found out a single artist (500-ish shows) sends around 1,300 requests in order to have a complete data set. This meant that at most I would be able to run this workflow once a day for one large artist. Thats when the project shifted from any artist to a single one. For this example I chose Bad Omens but I also wanted to make sure the worklfow i created was built around the API results and format more than the actual artist data so that it could easily be modified and be used for any other artists with a simple change in the API request.</p>
+
+    <p>Once the API connection was established and the data came through, it was quickly obvious that the data had come thorugh in quite possibly the worst shape possible. It would require a lot of cleaning and transformations in order to make it remotely usable in Tableau.</p>
+
+    <p>Whilst I know a single dashbaord cannot replace the hundreds of links and pages available to each artist in setlist fm. I wanted to at least be able to provide fans with an quick and easy view of artists most important aggregated metrics which are more obscure in setlist.fm. As well as the actual setlist data for each show which setlist.fm is designed for.</p> 
+    
+    <p>The workflow ended up being more intricate than anticipated. Consisting of many steps and tools, such as but not limited to regex, summarise, self joins and unions as well as scaffolding via multirow formulas. Whislt some tools are more advanced than others, the overall process was not technically difficult in particular but required a lot of analytical thinking and problem solving, given the state of the data at the start.</p>
+
+    <p>Whilst the workflow was built with dynamicity in mind it was inevitable to have some portion of the workflow built around the artist. Whilst the apended song data, such as the spotify links and album data, was dynamic and directly from the spotify API. Some artist specific transformations had to be made, such as making sure the spotify songs had the same name as the setlist.fm data. One example is that in setlist.fm there is a song called "Sound of The End" whilst spotify has it down as "Reprise (The Sound Of The End)". These steps and transformations can be easiy spotted and removed for future use</p>
+
+    <p>ㅤ</p>
+
+    <center><a href="https://gifyu.com/image/SWI3Q"><img src="https://s12.gifyu.com/images/SWI3Q.gif" alt="Alteryx workflow" border="0" /></a></center> 
+
+    <center><font size="1"><p>The workflow and all the tools used to create the final output</p></font></center>
+
+     
+    <p>ㅤ</p>
+
+    
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <center><font size="6">Tableau: Building a dashbaord </font></center>
+
+    <p>The dashboard development, was probably the most straightforward process in the project. Because the data was so meticulously prepared and tested during the development of the Alteryx workflow it's meant that I didn't have to worry too much about any irregularities in the data or issues with the format when it came to the dashboard development. </p>
+
+    <p>During the development, I was mostly focused on the user experience. Trying to develop a dashboard which would not only provide the user with all the metrics available, but in a way which would be easy to digest and understand. Knowing that these are not data analysts and might have a low level of data literacy it was important to make sure that they could extrapolate the information they wanted without being overwhelmed. </p>
+
+    <p>Some of the ways I think the the view has been simplified without losing data is the use of drill down charts so that the user can be in charge of what they see and the level of granularity they go into. Similarly a use of a visual calendar with colour to differentiate a date with a show to those without means that the user can quickly navigate through the past. Instead of guessing what results page a show is on on the website. Here there can directly go to the show they want to see and open up the setlist. Or if they don’t have a show in mind they’ll easily be able to see what dates a show has taken place in and those which had no show. Similarly filters can be applied to give a more granular result. i.e. if a fan is from the US they may only want to view the data for US shows which they can easily do. Same goes with tours and albums.</p>
+
+    <p>If the user wants to view a setlist they can select a date from the calendar or filter by show. This will take the user to the setlist dashboard where they have a simple but detailed view of the location on a map, the songs played and in what order, as well as the breakdown by albums. The detail is almost equal to that which can be seen on setlist.fm.</p>
+
+    <p>A new feature which has been added to the dashboard, which is not available in setlist.fm, is the ability to select a specific song from the setlist. This will take the user to a dashboard based on that song. The user can then see the last time the song was played, the number of shows/times it’s been played and the estimated position on the set list. Additionally the user can play the song via the embedded Spotify player and this gives users the chance to discover new songs or music which they might not be familiar with in preparation for the show. It will also show the album from which the song is part of as well as the tours that song has been played at.</p>
+
+    <p>Each one of these dashboards are clearly labelled and easy to read and extrapolate information from. They’re also easily navigated with dedicated navigation buttons and clear titles. Furthermore, the user has the option to download a PDF or Powerpoint copy of the dashboard view, should they wish to have a copy</p>
+
+
+    <p>ㅤ</p>
+
+    <center><img src="https://gcdnb.pbrd.co/images/d9zqY3WxTXr9.png?o=1" alt="Tableau" width="960" height="403" ></center>
+
+    <center><font size="1"><p>A view of all the sheets used in the dashboard</p></font></center>
+
+    <p>ㅤ</p>
+
+    
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <center><font size="6">Website: HMTL, GitHub, Domain and Embedding </font></center>
+    
+    <p>Now that the dashboard was developed and deployed, all that was left was to develop a simple webiste which the dashboqrd could be embedded into. The original idea was to create a single page website where it would contain a title and the dahboard imbedded into the page. However this felt a little bare and was not enough of an incentive as it would be no different than just having it hosted in Tableau public.</p>
+
+    <p>Instead, I used the opportunity to create a site which has a homepage introducing the band and the site itself. A main dashboard page which contains the dashboard and the main purpose of the website. Finally, this page, where I could document the development proccess and have it act as a portfolio of some sort to showcase and talk about the range of tools and skills which have been used and aquired to execute this project.</p>
+
+    <p>Before starting i had all but forgotten any useful hmtl and web developing skills, and had no idea how to imbed a tableau dashbaord into a website. Luckily I had just started in 'Back 2 School' weeek at the data school which meant it was time to learn a set of new skills. I spent the day brushing up on how to create a simple website page and was also taught how to imbed dashboard into a website. This is when i had the idea to create a website for this particular dashboard and expand on what I learned by adding new pages and addtional features. Its no facebook but very proud of what I learne and achieved in less than 24 hours and a set of skills which im sure will be extremely useful in the future.</p>
+
+    <p>The website was developed using VScode, composed of multiple html files, javascript and css. The code was updated and pushed onto GitHub allowing me to track my changes and have access to prevous itterations should something go wrong. Importantly this meant that i had a place to make my website could go live as GitHub provides a website for each repository a user has. This meant that I could finally publish the site to the public. The only issue was that I wasn't satisfied with "github.io./insertuserhere/projectname" as my webdomain. So I ended up purchasing this domain off a broker for the grand price of £0 (for the first year). After a few dns changes on the domain, the connection was set with github, meaning that the original repository address could now be replaced with my own domain.</p>
+
+    <p>ㅤ</p>
+
+    <center><img src="https://gcdnb.pbrd.co/images/ldDjIe3mYmMk.png?o=1" alt="Tableau" width="960" height="403" ></center>
+    <center><font size="1"><p>Code snippet of the html file for the Setlist page</p></font></center>
+    
+    <p>ㅤ</p>
+    
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+
+    <p>Overall the dashboard is very close to being completed but can still do with some features which I hope to implement in the future. Such as a “predicted” next setlist as well as special appearances info and fixing some minor bugs and formatting.</p>
+    
+    <p>ㅤ</p>
+
+    <p>ㅤ</p>
+
+    <!-- <a href="Homepage.html">
+    
+        <center><button
+            style="border-radius: 20px; ">
+            Homepage</button></center>
+    </a>
+
+    <a href="Setlist Dashboard.html">
+    
+    
+        <center><button
+            style="border-radius: 20px; ">
+            Go to Dashboard</button></center>
+    </a> -->
+
+</div>
+</h1>
+</body>
+</html>

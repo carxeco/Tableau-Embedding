@@ -3,16 +3,13 @@ let viz
 // Create varianble to store viz container
 const vizContainer = document.getElementById("vizContainer");
 
-
 // Create Variable to store URL
 const options = {
     device: "desktop",
     height: "1200px",
     width: "1600px",
-    hideToolbar: true,
-   
+    hideToolbar: true,   
 };
-
 
 // Create variable to store the URL
 const url = "https://public.tableau.com/views/BadOmensMusicSetlistDashboard/OverallView";
