@@ -67,7 +67,7 @@ lu li:hover a{
     }
 
 lu li a i{
-    width: 10px;
+    width: 10vw;
     text-align: center;
     }
 
@@ -147,7 +147,7 @@ a {
     }
 
 .Text {
-    max-width: 1400px;
+    max-width: 1400vw;
     }
 
 .Click-here{
